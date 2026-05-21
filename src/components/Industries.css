@@ -1,0 +1,19 @@
+.industries-section { padding:7rem 5%; overflow:hidden; }
+
+.ind-track-wrap { overflow:hidden; margin-top:3rem; }
+.ind-track {
+  display:flex; gap:1.5rem; width:max-content;
+  animation:scrollX 30s linear infinite;
+}
+.ind-track:hover { animation-play-state:paused; }
+
+.ind-chip {
+  display:flex; align-items:center; gap:10px;
+  padding:0.9rem 1.8rem;
+  background:var(--glass); border:1px solid var(--glass-border);
+  border-radius:40px; white-space:nowrap;
+  font-family:'Syne',sans-serif; font-weight:600; font-size:0.9rem;
+  transition:all 0.3s; cursor:none;
+}
+.ind-chip:hover { background:rgba(26,114,245,0.15); border-color:var(--electric); color:var(--white); }
+.chip-icon { font-size:1.2rem; }

@@ -1,0 +1,52 @@
+.navbar {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  padding:1.4rem 5%;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(5,13,26,0.75);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(26,114,245,0.1);
+  transition:all 0.4s ease;
+}
+.navbar.scrolled { padding:1rem 5%; background:rgba(5,13,26,0.95); }
+
+.logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+.logo-mark { width:40px; height:40px; }
+.logo-text { display:flex; flex-direction:column; line-height:1; }
+.logo-name  { font-family:'Syne',sans-serif; font-weight:800; font-size:1.05rem; color:var(--white); letter-spacing:0.03em; }
+.logo-sub   { font-family:'Space Mono',monospace; font-size:0.5rem; color:var(--teal); letter-spacing:0.15em; text-transform:uppercase; margin-top:2px; }
+
+.nav-links { display:flex; align-items:center; gap:2.5rem; list-style:none; }
+.nav-links a {
+  font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:500;
+  color:var(--silver); text-decoration:none;
+  letter-spacing:0.05em; text-transform:uppercase;
+  transition:color 0.3s; position:relative;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:-4px; left:0; right:0;
+  height:1px; background:var(--teal);
+  transform:scaleX(0); transform-origin:left; transition:transform 0.3s ease;
+}
+.nav-links a:hover { color:var(--white); }
+.nav-links a:hover::after { transform:scaleX(1); }
+.nav-links a.nav-cta {
+  background:linear-gradient(135deg,var(--electric),var(--teal)) !important;
+  color:var(--navy) !important; padding:0.55rem 1.4rem;
+  border-radius:3px; font-weight:700 !important;
+}
+.nav-links a.nav-cta::after { display:none !important; }
+
+.menu-toggle { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:none; }
+.menu-toggle span { display:block; width:24px; height:2px; background:var(--white); transition:all 0.3s; }
+
+@media (max-width:900px) {
+  .menu-toggle { display:flex; }
+  .nav-links {
+    display:none; flex-direction:column;
+    position:fixed; top:70px; left:0; right:0;
+    background:rgba(7,20,40,0.98);
+    padding:2rem; backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--glass-border); gap:1.5rem;
+  }
+  .nav-links.open { display:flex; }
+}

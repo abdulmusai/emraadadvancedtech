@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --navy:         #050d1a;
+  --deep:         #071428;
+  --midnight:     #0a1f3d;
+  --electric:     #1a72f5;
+  --teal:         #00c9b1;
+  --silver:       #a8bdd8;
+  --dim:          #4a6080;
+  --white:        #f0f6ff;
+  --glass:        rgba(15,76,158,0.12);
+  --glass-border: rgba(26,114,245,0.2);
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'DM Sans',sans-serif;
+  background:var(--navy);
+  color:var(--white);
+  overflow-x:hidden;
+  cursor:none;
+}
+
+.cursor {
+  width:10px; height:10px;
+  background:var(--teal); border-radius:50%;
+  position:fixed; top:0; left:0;
+  pointer-events:none; z-index:10000;
+  mix-blend-mode:screen;
+}
+.cursor-ring {
+  width:36px; height:36px;
+  border:1.5px solid var(--electric); border-radius:50%;
+  position:fixed; top:0; left:0;
+  pointer-events:none; z-index:9999; opacity:0.6;
+  transition:width 0.3s,height 0.3s,border-color 0.3s;
+}
+.cursor-ring.hovered { width:56px; height:56px; border-color:var(--teal); }
+
+.reveal { opacity:0; transform:translateY(40px); transition:opacity 0.8s ease,transform 0.8s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+.section-tag {
+  font-family:'Space Mono',monospace;
+  font-size:0.65rem; color:var(--teal);
+  letter-spacing:0.25em; text-transform:uppercase;
+  margin-bottom:1rem;
+  display:flex; align-items:center; gap:10px;
+}
+.section-tag::before { content:''; display:block; width:30px; height:1px; background:var(--teal); }
+.section-tag.centered { justify-content:center; }
+.section-tag.centered::before { display:none; }
+
+.section-h2 {
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2rem,4vw,3.2rem);
+  font-weight:800; line-height:1.1;
+  letter-spacing:-0.02em; margin-bottom:1.5rem;
+}
+.section-h2 em {
+  font-style:normal;
+  background:linear-gradient(90deg,var(--electric),var(--teal));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.section-sub { font-size:1.05rem; color:var(--silver); font-weight:300; line-height:1.8; max-width:600px; }
+
+.btn-primary {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:0.9rem 2.2rem;
+  background:linear-gradient(135deg,var(--electric),#0a5fd4);
+  color:#fff; font-family:'Syne',sans-serif;
+  font-weight:700; font-size:0.9rem;
+  letter-spacing:0.08em; text-transform:uppercase;
+  text-decoration:none; border-radius:3px; border:none; cursor:none;
+  transition:transform 0.3s,box-shadow 0.3s;
+  box-shadow:0 0 30px rgba(26,114,245,0.35);
+}
+.btn-primary:hover { transform:translateY(-2px); box-shadow:0 0 50px rgba(26,114,245,0.55); }
+
+.btn-outline {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:0.9rem 2.2rem;
+  background:transparent; color:var(--silver);
+  font-family:'Syne',sans-serif; font-weight:600;
+  font-size:0.9rem; letter-spacing:0.08em; text-transform:uppercase;
+  text-decoration:none; border-radius:3px;
+  border:1px solid var(--glass-border); cursor:none; transition:all 0.3s;
+}
+.btn-outline:hover { border-color:var(--electric); color:var(--white); background:rgba(26,114,245,0.08); }
+
+.tag {
+  font-family:'Space Mono',monospace;
+  font-size:0.6rem; color:var(--teal);
+  background:rgba(0,201,177,0.08);
+  border:1px solid rgba(0,201,177,0.2);
+  padding:3px 10px; border-radius:2px;
+  letter-spacing:0.08em; text-transform:uppercase;
+}
+
+@keyframes fadeUp   { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn   { from{opacity:0} to{opacity:0.9} }
+@keyframes spin     { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes pulse    { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.6)} }
+@keyframes scrollX  { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+@keyframes float    { 0%,100%{transform:translateY(-50%)} 50%{transform:translateY(calc(-50% - 15px))} }

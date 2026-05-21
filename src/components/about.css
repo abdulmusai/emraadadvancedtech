@@ -1,0 +1,43 @@
+.about-section { padding:7rem 5%; background:var(--deep); position:relative; overflow:hidden; }
+.about-glow {
+  position:absolute; top:-200px; right:-200px;
+  width:600px; height:600px;
+  background:radial-gradient(circle,rgba(0,201,177,0.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center; margin-top:4rem; }
+
+.about-points { display:flex; flex-direction:column; gap:1.5rem; margin-top:2.5rem; }
+.about-point {
+  display:flex; gap:1.2rem; align-items:flex-start;
+  padding:1.5rem; background:var(--glass);
+  border:1px solid var(--glass-border); border-radius:4px; transition:all 0.3s;
+}
+.about-point:hover { background:rgba(26,114,245,0.15); transform:translateX(6px); border-color:var(--electric); }
+.point-icon { width:44px; height:44px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:rgba(26,114,245,0.12); border-radius:3px; font-size:1.3rem; }
+.point-text h4 { font-family:'Syne',sans-serif; font-weight:700; font-size:0.95rem; margin-bottom:0.3rem; }
+.point-text p  { font-size:0.85rem; color:var(--silver); line-height:1.6; font-weight:300; }
+
+.about-visual { position:relative; aspect-ratio:1; display:flex; align-items:center; justify-content:center; max-width:400px; }
+.hex-ring { position:absolute; border-radius:50%; border:1px solid rgba(26,114,245,0.2); animation:spin linear infinite; }
+.hex-ring.r1 { width:100%; height:100%; animation-duration:60s; }
+.hex-ring.r2 { width:75%; height:75%; animation-duration:40s; animation-direction:reverse; border-color:rgba(0,201,177,0.15); }
+.hex-ring.r3 { width:50%; height:50%; animation-duration:25s; }
+.hex-center {
+  width:160px; height:160px; display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  background:linear-gradient(135deg,var(--midnight),var(--deep));
+  border:1px solid var(--glass-border); border-radius:50%;
+  position:relative; z-index:2; box-shadow:0 0 60px rgba(26,114,245,0.2);
+}
+.e-letter {
+  font-family:'Syne',sans-serif; font-size:4rem; font-weight:800; line-height:1;
+  background:linear-gradient(135deg,var(--electric),var(--teal));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.e-sub { font-family:'Space Mono',monospace; font-size:0.45rem; color:var(--dim); letter-spacing:0.15em; }
+
+@media (max-width:900px) {
+  .about-grid { grid-template-columns:1fr; }
+  .about-visual { max-width:300px; margin:0 auto; }
+}

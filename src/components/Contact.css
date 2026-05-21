@@ -1,0 +1,50 @@
+.contact-section {
+  padding:7rem 5%; background:var(--navy);
+  position:relative; overflow:hidden;
+}
+.contact-section::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg,transparent,var(--electric),var(--teal),transparent);
+}
+.contact-inner { max-width:680px; margin:0 auto; }
+
+.contact-form { display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.form-field { display:flex; flex-direction:column; gap:6px; }
+.form-field label { font-family:'Space Mono',monospace; font-size:0.6rem; color:var(--dim); letter-spacing:0.15em; text-transform:uppercase; }
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background:rgba(15,76,158,0.08);
+  border:1px solid var(--glass-border); border-radius:3px;
+  padding:0.8rem 1rem; color:var(--white);
+  font-family:'DM Sans',sans-serif; font-size:0.9rem;
+  outline:none; transition:border-color 0.3s; resize:none;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus { border-color:var(--electric); background:rgba(26,114,245,0.1); }
+.form-field select option { background:var(--deep); }
+
+.form-submit {
+  width:100%; padding:1rem 2rem;
+  background:linear-gradient(135deg,var(--electric),var(--teal));
+  color:var(--navy); font-family:'Syne',sans-serif;
+  font-weight:800; font-size:0.95rem;
+  letter-spacing:0.1em; text-transform:uppercase;
+  border:none; border-radius:3px; cursor:none; transition:all 0.3s;
+}
+.form-submit:hover { transform:translateY(-2px); box-shadow:0 10px 40px rgba(0,201,177,0.3); }
+
+.success-msg {
+  text-align:center; padding:4rem 2rem;
+  border:1px solid var(--glass-border); border-radius:6px;
+  background:var(--glass); margin-bottom:2rem;
+}
+.success-icon { display:block; font-size:3rem; margin-bottom:1rem; color:var(--teal); }
+.success-msg h3 { font-family:'Syne',sans-serif; font-size:1.5rem; font-weight:700; margin-bottom:0.5rem; }
+.success-msg p  { color:var(--silver); font-size:0.95rem; }
+
+.contact-footer-note { font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--dim); letter-spacing:0.1em; text-align:center; margin-top:1rem; }
+
+@media (max-width:600px) { .form-row { grid-template-columns:1fr; } }
