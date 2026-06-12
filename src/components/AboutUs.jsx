@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import './About.css';
+import '<div className="" />
+<AboutUs></AboutUs>.css';
 
 const points = [
   { icon: '🏛️', title: 'Enterprise & Institutional Focus', desc: 'We target government bodies, financial institutions, and enterprise clients who demand precision, security, and scale.' },
