@@ -7,7 +7,7 @@ const points = [
   { icon: '⚡', title: 'AI & Blockchain-Driven Innovation', desc: 'Every solution is built on advanced technological foundations — not legacy processes or generic tooling.' },
 ];
 
-export default function About() {
+export default function AboutUs() {
   const ref = useRef(null);
 
   useEffect(() => {
